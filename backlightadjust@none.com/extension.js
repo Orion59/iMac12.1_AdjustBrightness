@@ -44,29 +44,30 @@ class Indicator extends PanelMenu.Button {
         box.add_child(PopupMenu.arrowIcon(St.Side.BOTTOM));
         this.add_child(box);
 
-        let item1 = new PopupMenu.PopupMenuItem(_('25%'));
+	let item1 = new PopupMenu.PopupMenuItem("25%",{ style_class: 'subpopup' });
         item1.connect('activate', () => {
             Util.spawnCommandLine('xrandr --output eDP --brightness 0.25');
         });
         this.menu.addMenuItem(item1);
 
-        let item2 = new PopupMenu.PopupMenuItem(_('50%'));
+        let item2 = new PopupMenu.PopupMenuItem("50%",{ style_class: 'subpopup' });
         item2.connect('activate', () => {
             Util.spawnCommandLine('xrandr --output eDP --brightness 0.50');
         });
         this.menu.addMenuItem(item2);
 
-        let item3 = new PopupMenu.PopupMenuItem(_('75%'));
+        let item3 = new PopupMenu.PopupMenuItem("75%",{ style_class: 'subpopup' });
         item3.connect('activate', () => {
             Util.spawnCommandLine('xrandr --output eDP --brightness 0.75');
         });
         this.menu.addMenuItem(item3);
 
-        let item4 = new PopupMenu.PopupMenuItem(_('100%'));
+        let item4 = new PopupMenu.PopupMenuItem("100%",{ style_class: 'subpopup' });
         item4.connect('activate', () => {
             Util.spawnCommandLine('xrandr --output eDP --brightness 1');
         });
         this.menu.addMenuItem(item4);
+
     }
 });
 
